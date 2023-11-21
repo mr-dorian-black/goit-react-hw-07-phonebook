@@ -1,7 +1,7 @@
 import { nanoid } from 'nanoid';
 import { StyledList, StyledButton } from './ContactList.styled';
 import { useDispatch } from 'react-redux';
-import { removeContact } from 'redux/phonebook-slice';
+import { deleteContact } from 'api/contacts-api';
 
 export const ContactList = ({ items }) => {
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ export const ContactList = ({ items }) => {
             <StyledButton
               type="button"
               onClick={() => {
-                dispatch(removeContact(item.id));
+                dispatch(deleteContact(item.id));
               }}
             >
               Delete
